@@ -95,7 +95,7 @@ namespace Miscelanea
             Console.WriteLine("Convertir euros a dolares");
             Console.WriteLine("Ingrese un monto: ");
             num1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine(num1 + " euros a dolares es : " + (num1 * 1.06 + " USD"));
+            Console.WriteLine(num1 + " euros a dolares es : " + (num1 / 1.06 + " USD"));
         }
             catch (Exception)
             {
