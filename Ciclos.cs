@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +6,50 @@ using System.Threading.Tasks;
 
 namespace Miscelanea
 {
-    public class Ciclos
+    internal class Ciclos
     {
-        public static void ciclos()
+
+        Menu menu = new Menu();
+
+        private int num1 = 0;
+        private int num2 = 0;
+        private int num3 = 0;
+        private int respuesta = 0;
+        public int getNum1()
+        {
+            return this.num1;
+        }
+        public void setNum1(int num1)
+        {
+            this.num1 = num1;
+        }
+        public int getNum2()
+        {
+            return this.num2;
+        }
+        public void setNum2(int num2)
+        {
+            this.num2 = num2;
+        }
+        public int getNum3()
+        {
+            return this.num3;
+        }
+        public void setNum3(int num3)
+        {
+            this.num3 = num3;
+        }
+        public int getRespuesta()
+        {
+            return this.respuesta;
+        }
+        public void setRespuesta(int respuesta)
+        {
+            this.respuesta = respuesta;
+        }
+
+
+        public void ci()
         {
             Console.WriteLine("************************************************************************************************************");
             Console.WriteLine("*                                                 Ciclos                                                   *");
@@ -26,86 +67,55 @@ namespace Miscelanea
             Console.WriteLine("************************************************************************************************************");
 
         }
-        public static void ci_1(int num1)
+        public void ci_1()
         {
-            try
-            {
+            
                 Console.WriteLine("*************************************");
                 Console.WriteLine("Los números del 1 al 100 que son multiplos de 3 son:");
                 for (num1 = 3; num1 <= 100; num1 += 3)
                 {
                     Console.WriteLine("- " + num1);
                 }
-            }
+            
 
-            catch (Exception)
-            {
-                Ciclos.ci_error();
-                Ciclos.ci_1(1);
-            }
-            return;
+
         }
-        public static void ci_2(int num1)
+        public void ci_2()
         {
-            try
-            {
+            
                 Console.WriteLine("*************************************");
                 Console.WriteLine("Los números impares entre el 0 y 100 son: ");
                 for (num1 = 1; num1 <= 100; num1 += 2)
                 {
                     Console.WriteLine("- " + num1);
                 }
-            }
-
-            catch (Exception)
-            {
-                Ciclos.ci_error();
-                Ciclos.ci_2(1);
-            }
-            return;
+            
         }
-        public static void ci_3(int num1)
+        public void ci_3()
         {
-            try
-            {
+            
                 Console.WriteLine("*************************************");
                 Console.WriteLine("Los números pares entre el 1 y 100 son:");
                 for (num1 = 2; num1 <= 100; num1 += 2)
                 {
                     Console.WriteLine("- " + num1);
                 }
-            }
-
-            catch (Exception)
-            {
-                Ciclos.ci_error();
-                Ciclos.ci_3(1);
-            }
-            return;
+            
         }
-        public static void ci_4(int num1)
+        public void ci_4()
         {
-            try
-            {
+            
                 Console.WriteLine("*************************************");
                 Console.WriteLine("Cuadrado de los números del 1 al 30 son");
                 for (num1 = 1; num1 <= 30; num1++)
                 {
                     Console.WriteLine("El cuadrado de " + num1 + " = " + Math.Pow(num1, 2));
                 }
-            }
-
-            catch (Exception)
-            {
-                Ciclos.ci_error();
-                Ciclos.ci_4(1);
-            }
-            return;
+       
         }
-        public static void ci_5(int num1, int num2 = 0)
+        public  void ci_5()
         {
-            try
-            {
+            
                 Console.WriteLine("*************************************");
                 Console.WriteLine("Suma de los cien primeros cuadrados");
 
@@ -115,19 +125,11 @@ namespace Miscelanea
                     num2 = num2 + (int)Math.Pow(num1, 2);
                 }
                 Console.WriteLine("La suma de los cien primeros cuadrados es: " + num2);
-            }
-
-            catch (Exception)
-            {
-                Ciclos.ci_error();
-                Ciclos.ci_5(1, 2);
-            }
-            return;
+         
         }
-        public static void ci_6(int num1, int num2, int num3)
+        public void ci_6()
         {
-            try
-            {
+            
 
                 Console.WriteLine("*************************************");
                 Console.WriteLine("Cuadrado de los números del 1 al 30 son");
@@ -139,19 +141,11 @@ namespace Miscelanea
                 {
                     Console.WriteLine("Número " + num3);
                 }
-            }
-
-            catch (Exception)
-            {
-                Ciclos.ci_error();
-                Ciclos.ci_6(1, 2, 3);
-            }
-            return;
+           
         }
-        public static void ci_7(int num1, int num2 = 0)
+        public void ci_7()
         {
-            try
-            {
+           
                 Console.WriteLine("*************************************");
                 Console.WriteLine("Suma de todos los números ingresados, mientras no sea cero");
                 do
@@ -161,21 +155,16 @@ namespace Miscelanea
                     num2 = num2 + num1;
                 } while (num1 != 0);
                 Console.WriteLine("La suma de todos los números es: " + num2);
-            }
-
-            catch (Exception)
-            {
-                Ciclos.ci_error();
-                Ciclos.ci_7(1, 2);
-            }
-            return;
+          
 
         }
-        public static void ci_error()
+        public void ci_error()
         {
             Console.WriteLine("******************************************");
             Console.WriteLine("*          No es un valor valido         *");
             Console.WriteLine("******************************************");
+
+            menu.menu();
         }
     }
 }
