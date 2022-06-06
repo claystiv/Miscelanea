@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +6,51 @@ using System.Threading.Tasks;
 
 namespace Miscelanea
 {
-    public class Condicionales
+    
+    internal class Condicionales
     {
-        public static void condicionales()
+
+        Menu menu = new Menu();
+
+        private int num1;
+        private int num2;
+        private int num3;
+        private int respuesta;
+        public int getNum1()
+        {
+            return this.num1;
+        }
+        public void setNum1(int num1)
+        {
+            this.num1 = num1;
+        }
+        public double getNum2()
+        {
+            return this.num2;
+        }
+        public void setNum2(int num2)
+        {
+            this.num2 = num2;
+        }
+        public int getNum3()
+        {
+            return this.num3;
+        }
+        public void setNum3(int num3)
+        {
+            this.num3 = num3;
+        }
+        public int getRespuesta()
+        {
+            return this.respuesta;
+        }
+        public void setRespuesta(int respuesta)
+        {
+            this.respuesta = respuesta;
+        }
+
+
+        public void con()
         {
             Console.WriteLine("************************************************************************************************************");
             Console.WriteLine("*                                              Condicionales                                               *");
@@ -26,228 +68,183 @@ namespace Miscelanea
             Console.WriteLine("************************************************************************************************************");
 
         }
-        public static void co_1(int num1)
+        public void con_1()
         {
-            try
+
+            Console.WriteLine("*************************************");
+            Console.WriteLine("Ingrese el número");
+            num1 = Convert.ToInt32(Console.ReadLine());
+            if (num1 > 0)
             {
-                Console.WriteLine("*************************************");
-                Console.WriteLine("Ingrese el número");
-                num1 = Convert.ToInt32(Console.ReadLine());
-                if (num1 > 0)
-                {
-                    Console.WriteLine("El número ingrsado es positivo");
-                }
-                else if (num1 == 0)
-                {
-                    Console.WriteLine("El número cero es un número neutral");
-                }
-                else
-                {
-                    Console.WriteLine("El número ingresado es negativo");
-                }
+                Console.WriteLine("El número ingrsado es positivo");
             }
-            catch (Exception)
+            else if (num1 == 0)
             {
-                Condicionales.co_error();
-                Condicionales.co_1(1);
+                Console.WriteLine("El número cero es un número neutral");
             }
-            return;
+            else
+            {
+                Console.WriteLine("El número ingresado es negativo");
+            }
+            Console.ReadKey();
+
+
         }
-        public static void co_2(int num1, int num2)
+        public void con_2()
         {
-            try
+
+            Console.WriteLine("*************************************");
+            Console.WriteLine("Ingrese el primer número");
+            num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingres el segundo número");
+            num2 = Convert.ToInt32(Console.ReadLine());
+            if (num1 > num2)
             {
-                Console.WriteLine("*************************************");
-                Console.WriteLine("Ingrese el primer número");
-                num1 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Ingres el segundo número");
-                num2 = Convert.ToInt32(Console.ReadLine());
-                if (num1 > num2)
-                {
-                    Console.WriteLine("El número mayor es: " + num1);
-                    Console.WriteLine("El número menor es: " + num2);
-                }
-                else
-                {
-                    Console.WriteLine("El número mayor es: " + num2);
-                    Console.WriteLine("El número menor es: " + num1);
-                }
+                Console.WriteLine("El número mayor es: " + num1);
+                Console.WriteLine("El número menor es: " + num2);
             }
-            catch (Exception)
+            else
             {
-                Condicionales.co_error();
-                Condicionales.co_2(1, 2);
+                Console.WriteLine("El número mayor es: " + num2);
+                Console.WriteLine("El número menor es: " + num1);
             }
-            return;
+
         }
-        public static void co_3(int num1, int num2, int num3)
+        public void con_3()
         {
-            try
+
+            Console.WriteLine("*************************************");
+            Console.WriteLine("Ingrese el primer número: ");
+            num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el segundo número: ");
+            num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el tercer número: ");
+            num3 = Convert.ToInt32(Console.ReadLine());
+            if (num1 > num2)
             {
-                Console.WriteLine("*************************************");
-                Console.WriteLine("Ingrese el primer número: ");
-                num1 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Ingrese el segundo número: ");
-                num2 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Ingrese el tercer número: ");
-                num3 = Convert.ToInt32(Console.ReadLine());
-                if (num1 > num2)
-                {
-                    Console.WriteLine("El primer número es mayor que el segundo número");
-                    Console.WriteLine(num1 + "  Es mayor que  " + num2);
-                }
-                else
-                {
-                    Console.WriteLine("El segundo número es mayor que el primer número");
-                    Console.WriteLine(num2 + "  Es mayor que  " + num1);
-                }
-                if (num1 > num3)
-                {
-                    Console.WriteLine("El primer número es mayor que el tercer número");
-                    Console.WriteLine(num1 + "  Es mayor que  " + num3);
-                }
-                else
-                {
-                    Console.WriteLine("El tercer número es mayor que el primer número");
-                    Console.WriteLine(num3 + "  Es mayor que  " + num1);
-                }
-                if (num2 > num3)
-                {
-                    Console.WriteLine("El segundo número es mayor que el tercer número");
-                    Console.WriteLine(num2 + "  Es mayor que  " + num3);
-                }
-                else
-                {
-                    Console.WriteLine("El tercer número es mayor que el segúndo número");
-                    Console.WriteLine(num3 + "  Es mayor que  " + num2);
-                }
+                Console.WriteLine("El primer número es mayor que el segundo número");
+                Console.WriteLine(num1 + "  Es mayor que  " + num2);
             }
-            catch (Exception)
+            else
             {
-                Condicionales.co_error();
-                Condicionales.co_3(1, 2, 3);
+                Console.WriteLine("El segundo número es mayor que el primer número");
+                Console.WriteLine(num2 + "  Es mayor que  " + num1);
             }
-            return;
+            if (num1 > num3)
+            {
+                Console.WriteLine("El primer número es mayor que el tercer número");
+                Console.WriteLine(num1 + "  Es mayor que  " + num3);
+            }
+            else
+            {
+                Console.WriteLine("El tercer número es mayor que el primer número");
+                Console.WriteLine(num3 + "  Es mayor que  " + num1);
+            }
+            if (num2 > num3)
+            {
+                Console.WriteLine("El segundo número es mayor que el tercer número");
+                Console.WriteLine(num2 + "  Es mayor que  " + num3);
+            }
+            else
+            {
+                Console.WriteLine("El tercer número es mayor que el segúndo número");
+                Console.WriteLine(num3 + "  Es mayor que  " + num2);
+            }
+
         }
-        public static void co_4(int num1, int num2)
+        public void con_4()
         {
-            try
+
+            Console.WriteLine("*************************************");
+            Console.WriteLine("Ingrese el primer número: ");
+            num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el segundo número: ");
+            num2 = Convert.ToInt32(Console.ReadLine());
+            if (num1 > num2)
             {
-                Console.WriteLine("*************************************");
-                Console.WriteLine("Ingrese el primer número: ");
-                num1 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Ingrese el segundo número: ");
-                num2 = Convert.ToInt32(Console.ReadLine());
-                if (num1 > num2)
-                {
-                    Console.WriteLine("Como a es mayor que b el resultado de la suma es: ");
-                    Console.WriteLine(num1 + num2);
-                }
-                else
-                {
-                    Console.WriteLine("Como a es menor que b el resultado de la resta es: ");
-                    Console.WriteLine(num1 - num2);
-                }
+                Console.WriteLine("Como a es mayor que b el resultado de la suma es: ");
+                Console.WriteLine(num1 + num2);
             }
-            catch (Exception)
+            else
             {
-                Condicionales.co_error();
-                Condicionales.co_4(1, 2);
+                Console.WriteLine("Como a es menor que b el resultado de la resta es: ");
+                Console.WriteLine(num1 - num2);
             }
-            return;
+
         }
-        public static void co_5(int num1, int num2)
+        public void con_5()
         {
-            try
+
+            Console.WriteLine("*************************************");
+            Console.WriteLine("Ingrese el primer número: ");
+            num1 = (int)Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Ingrese el segundo número: ");
+            num2 = (int)Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("El cociente de la división es: ");
+            Console.WriteLine(num1 / num2);
+            if (num2 == 0)
             {
-                Console.WriteLine("*************************************");
-                Console.WriteLine("Ingrese el primer número: ");
-                num1 = (int)Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Ingrese el segundo número: ");
-                num2 = (int)Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("El cociente de la división es: ");
-                Console.WriteLine(num1 / num2);
-                if (num2 == 0)
-                {
-                    Console.WriteLine("la operación no se puede realizar");
-                }
+                Console.WriteLine("la operación no se puede realizar");
             }
-            catch (Exception)
-            {
-                Condicionales.co_error();
-                Condicionales.co_5(1, 2);
-            }
-            return;
+
+
         }
-        public static void co_6(int num1, int num2)
+        public void con_6()
         {
-            try
+
+            Console.WriteLine("*************************************");
+            Console.WriteLine("Ingrese el primer número: ");
+            num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el segundo número: ");
+            num2 = Convert.ToInt32(Console.ReadLine());
+            if ((num1 < 0) || (num2 < 0))
             {
-                Console.WriteLine("*************************************");
-                Console.WriteLine("Ingrese el primer número: ");
-                num1 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Ingrese el segundo número: ");
-                num2 = Convert.ToInt32(Console.ReadLine());
-                if ((num1 < 0) || (num2 < 0))
-                {
-                    Console.WriteLine("Como al menos uno de los número es negativo el valor de la suma es: ");
-                    Console.WriteLine(num1 + num2);
-                }
-                else
-                {
-                    Console.WriteLine("Como no hay ningun número negativo el valor de la multiplicación es: ");
-                    Console.WriteLine(num1 * num2);
-                }
+                Console.WriteLine("Como al menos uno de los número es negativo el valor de la suma es: ");
+                Console.WriteLine(num1 + num2);
             }
-            catch (Exception)
+            else
             {
-                Condicionales.co_error();
-                Condicionales.co_6(1, 2);
+                Console.WriteLine("Como no hay ningun número negativo el valor de la multiplicación es: ");
+                Console.WriteLine(num1 * num2);
             }
-            return;
         }
-        public static void co_7(int num1)
+        public void con_7()
         {
-            try
+
+            Console.WriteLine("*************************************");
+            Console.WriteLine("Ingrese el año: ");
+            num1 = Convert.ToInt32(Console.ReadLine());
+            if (num1 / 4 == 0)
             {
-                Console.WriteLine("*************************************");
-                Console.WriteLine("Ingrese el año: ");
-                num1 = Convert.ToInt32(Console.ReadLine());
-                if (num1 / 4 == 0)
+                if (num1 / 100 == 0)
                 {
-                    if (num1 / 100 == 0)
-                    {
-                        if (num1 / 400 == 0)
-                        {
-                            Console.WriteLine("El año " + num1 + " si es bisiesto");
-                        }
-                        else
-                        {
-                            Console.WriteLine("El año " + num1 + " no es bisiesto");
-                        }
-                    }
-                    else
+                    if (num1 / 400 == 0)
                     {
                         Console.WriteLine("El año " + num1 + " si es bisiesto");
                     }
+                    else
+                    {
+                        Console.WriteLine("El año " + num1 + " no es bisiesto");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("El año " + num1 + " no es bisiesto");
+                    Console.WriteLine("El año " + num1 + " si es bisiesto");
                 }
             }
-            catch (Exception)
+            else
             {
-                Condicionales.co_error();
-                Condicionales.co_7(1);
+                Console.WriteLine("El año " + num1 + " no es bisiesto");
             }
-            return;
+
         }
-        public static void co_error()
+        public void con_error()
         {
             Console.WriteLine("******************************************");
             Console.WriteLine("*          No es un valor valido         *");
             Console.WriteLine("******************************************");
+
+            menu.menu();
         }
     }
 }
