@@ -10,7 +10,7 @@ namespace Miscelanea
     {
         public static void Main()
         {
-
+            Menu menu = new Menu();
             Salir salir = new Salir();
 
             Operadores op_0 = new Operadores();
@@ -204,7 +204,7 @@ namespace Miscelanea
                 Console.WriteLine("*          No es un valor valido         *");
                 Console.WriteLine("******************************************");
 
-                
+                menu.menu();
             }
 
         }
